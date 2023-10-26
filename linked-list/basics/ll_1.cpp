@@ -14,6 +14,13 @@ class Node {
     }
 };
 
+void traverseReverse(Node* head) {
+    Node* temp = head;
+    if (head == NULL) return;
+    traverseReverse(head -> next);
+    cout << head -> data << " -> ";
+}
+
 void deleteAlternateNode(Node* &head) {
     Node* temp = head;
     int n = 0;
@@ -143,7 +150,10 @@ int main() {
     // traverse(node1);
 
     deleteAlternateNode(node1);
+
     traverse(node1);
+    
+    traverseReverse(node1);
 
     return 0;
 }
